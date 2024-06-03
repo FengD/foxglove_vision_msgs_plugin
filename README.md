@@ -34,6 +34,8 @@ root@fengding:~# mcap convert mono3d_front120_0.db3 mono3d_front120_0.mcap --ame
 
 ## 3. Annexe
 
+* Pre-built extensions: [fengding.vision_msg_converter-1.1.0.foxe](sources/fengding.vision_msg_converter-1.1.0.foxe)
+
 ### 3.1. mcap
 
 ``` shell
