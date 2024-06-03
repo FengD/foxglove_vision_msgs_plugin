@@ -71,17 +71,9 @@ Use "mcap [command] --help" for more information about a command.
 
 ### 3.2. Videos
 
-* Rviz
+* Rviz - [rviz_mono_3d.mp4](sources/rviz_mono_3d.mp4)
 
-<video width="320" height="240" controls>
-  <source src="https://github.com/FengD/foxglove_vision_msgs_plugin/blob/master/sources/rviz_mono_3d.mp4" type="video/mp4">
-</video>
-
-* Foxglove
-
-<video width="320" height="240" controls>
-  <source src="https://github.com/FengD/foxglove_vision_msgs_plugin/blob/master/sources/foxglove_mono_3d.mp4" type="video/mp4">
-</video>
+* Foxglove - [foxglove_mono_3d.mp4](sources/foxglove_mono_3d.mp4)
 
 
 ### 3.3. Test Files
