@@ -1,8 +1,9 @@
+// import the useful package module
 import { ExtensionContext } from "@foxglove/studio";
 import { CubePrimitive, ArrowPrimitive, TextPrimitive, SceneUpdate } from "@foxglove/schemas";
-//import { std_msgs } from "@foxglove/rosmsg-msgs-common";
 import { Time } from "@foxglove/schemas/schemas/typescript/Time";
 
+// predefine the structure of the ros vision_msgs
 type Header = {
   seq: number;
   stamp: Time;
@@ -66,12 +67,15 @@ type Detection3DArray = {
   detections: Detection3D[];
 };
 
+// override the activate function
 export function activate(extensionContext: ExtensionContext) {
   extensionContext.registerMessageConverter({
     fromSchemaName: "vision_msgs/msg/Detection3DArray",
     toSchemaName: "foxglove.SceneUpdate",
     converter: (inputMessage: Detection3DArray): SceneUpdate => {
   const { header, detections } = inputMessage;
+
+  // the color used for different classes
   const colorMap = [
     { r: 1, g: 0, b: 0, a: 1 },
     { r: 1, g: 0.647, b: 0, a: 1 },
@@ -89,10 +93,12 @@ export function activate(extensionContext: ExtensionContext) {
     HAV: 3,
     Pedestrian: 4,
   };
-
-  var cubes = [];       // bounding boxes
-  var dirs = [];        // use arrow to indicate target heading
-  var annos = [];       // text description for each target
+  // bounding boxes
+  var cubes = [];
+  // use arrow to indicate target heading
+  var dirs = [];
+  // text description for each target
+  var annos = [];
   for (var detection of detections) {
     var category = "";
     var class_idx = 0;
@@ -148,10 +154,12 @@ export function activate(extensionContext: ExtensionContext) {
     }
     if (detection.results[0]) {
       if (category.length != 0) {
-        anno_list.push(category);      // currently category name
+	// currently category name
+        anno_list.push(category);
       }
       if (score < 1 && score > 0) {
-        anno_list.push(String(score.toFixed(2)));   // pred score
+	// pred score
+        anno_list.push(String(score.toFixed(2)));
       }
     }
     var anno_text = anno_list.join("");
