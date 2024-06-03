@@ -2,7 +2,7 @@
   "name": "vision_msg_converter",
   "displayName": "vision_msg_converter",
   "description": "This extension is used to display vison_msgs",
-  "publisher": "CRDC_AIRI",
+  "publisher": "FengDING",
   "homepage": "",
   "version": "1.1.0",
   "license": "UNLICENSED",
@@ -18,13 +18,14 @@
     "pretest": "foxglove-extension pretest"
   },
   "devDependencies": {
-    "@foxglove/eslint-plugin": "1.0.0",
-    "@foxglove/studio": "1.75.0",
+    "@foxglove/eslint-plugin": "1.0.1",
+    "@foxglove/studio": "2.4",
     "@types/react": "18.2.34",
     "@types/react-dom": "18.2.14",
     "@typescript-eslint/eslint-plugin": "6.9.1",
     "@typescript-eslint/parser": "6.9.1",
-    "create-foxglove-extension": "0.8.6",
+    "clean-webpack-plugin": "^4.0.0",
+    "create-foxglove-extension": "1.0.1",
     "eslint": "8.52.0",
     "eslint-config-prettier": "8.10.0",
     "eslint-plugin-es": "4.1.0",
@@ -41,6 +42,7 @@
   },
   "dependencies": {
     "@foxglove/rosmsg-msgs-common": "^3.1.0",
-    "@foxglove/schemas": "^1.6.2"
+    "@foxglove/schemas": "^1.6.2",
+    "cli": "^1.0.1"
   }
 }
